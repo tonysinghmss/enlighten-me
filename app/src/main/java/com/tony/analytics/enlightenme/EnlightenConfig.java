@@ -5,8 +5,9 @@ package com.tony.analytics.enlightenme;
  */
 public class EnlightenConfig {
     public static final String OAUTH_URL = "https://api.instagram.com/oauth/authorize/";
+    public static final String TOKEN_URL = "https://api.instagram.com/oauth/access_token";
     public static final String REDIRECT_URI = "http://enlightenme.analytics.tony.com/";
-    public static final String OAUTH_SCOPE = "basic public_content follower_list comments relationships likes";
+    public static final String OAUTH_SCOPE = "basic+public_content+follower_list+comments+relationships+likes";
     public static final String CLIENT_ID = "enlightenme client id";
     public static final String CLIENT_SECRET = " enlightenme client secret";
 }
