@@ -87,7 +87,7 @@ private class TokenGet extends AsyncTask<String, String, JSONObject> {
             @Override
             protected void onPreExecute() {
                super.onPreExecute();
-               pDialog = new ProgressDialog(MainActivity.this);
+               pDialog = new ProgressDialog(AuthActivity.this);
                pDialog.setMessage("Contacting Instagram ...");
                pDialog.setIndeterminate(false);
                pDialog.setCancelable(true);
@@ -107,14 +107,12 @@ private class TokenGet extends AsyncTask<String, String, JSONObject> {
                 pDialog.dismiss();
                 if (json != null){
                        try {
-                        String tok = json.getString("access_token");
-                        String expire = json.getString("expires_in");
-                        String refresh = json.getString("refresh_token");
+                           String tok = json.getString("access_token");
+                        //String expire = json.getString("expires_in");
+                        //String refresh = json.getString("refresh_token");
                            Log.d("Token Access", tok);
-                           Log.d("Expire", expire);
-                           Log.d("Refresh", refresh);
-                           auth.setText("Authenticated");
-                           Access.setText("Access Token:"+tok+"nExpires:"+expire+"nRefresh Token:"+refresh);
+                           authBtn.setText("Authenticated");
+                           //Access.setText("Access Token:"+tok+"nExpires:"+expire+"nRefresh Token:"+refresh);
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
