@@ -60,9 +60,10 @@ public class JsonHelper {
             writer.flush();
             // Fetch the string response of the url
             String response = streamToString(urlConnection.getInputStream());
+            System.out.println(response);
             jsonObject = (JSONObject) new JSONTokener(response).nextValue();
-//            mAccessToken = jsonObject.getString("access_token");
-//            Log.i(TAG, "Got access token: " + mAccessToken);
+            String mAccessToken = jsonObject.getString("access_token");
+            Log.i(TAG, "Got access token: " + mAccessToken);
 //            String id = jsonObject.getJSONObject("user").getString("id");
 //            String userName = jsonObject.getJSONObject("user").getString("username");
 //            String fullName = jsonObject.getJSONObject("user").getString("full_name");
