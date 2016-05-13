@@ -128,6 +128,14 @@ public class AuthActivity extends AppCompatActivity {
                     Log.d("Token Access", tok);
                     authBtn.setText("Authenticated");
                     //Access.setText("Access Token:"+tok+"nExpires:"+expire+"nRefresh Token:"+refresh);
+                    Intent homeActivityIntent = new Intent(getBaseContext(), HomeActivity.class);
+                    homeActivityIntent.putExtra("ACCESS_TOKEN",tok);
+                    //            String id = jsonObject.getJSONObject("user").getString("id");
+                    String instgUserName = json.getJSONObject("user").getString("username");
+                    homeActivityIntent.putExtra("INSTG_USER_NAME",instgUserName);
+                    String fullName = json.getJSONObject("user").getString("full_name");
+                    homeActivityIntent.putExtra("FULL_NAME",fullName);
+                    startActivity(homeActivityIntent);
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
