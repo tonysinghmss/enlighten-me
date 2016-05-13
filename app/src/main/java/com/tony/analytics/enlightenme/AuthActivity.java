@@ -3,7 +3,6 @@ package com.tony.analytics.enlightenme;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -80,7 +79,7 @@ public class AuthActivity extends AppCompatActivity {
                             Log.i("", "ACCESS_DENIED_HERE");
                             resultIntent.putExtra("code", authCode);
                             authComplete = true;
-                            setResult(Activity.RESULT_CANCELED, resultIntent);
+                            //setResult(Activity.RESULT_CANCELED, resultIntent);
                             Toast.makeText(getApplicationContext(), "Error Occured", Toast.LENGTH_SHORT).show();
                             authDialog.dismiss();
                         }
